@@ -1,3 +1,45 @@
+<!-- Ng Model -->
+
 <input type="text" [(ngModel)]="inputName">
 <h3>{{inputName}}</h3>
 
+<!-- Data Binding
+    - String Interpolation, Property Binding
+    Getting Access to Variables in your ts File
+-->
+
+<!-- String Interpolation 
+    - if you want to output something in your template print some text to it
+    - if you want to change some property, use property binding
+-->
+
+
+<p>{{'server'}} with id {{serverId}} is {{serverStatus}}</p>
+
+<!-- Property Binding
+    - Dom Element changes based on a Variable, as soon as it changes
+    - change at run time
+    - disables html attribute is set to the Variable "allowServer"
+        - with this you never have to do document.getElement by, then change this ...
+-->
+
+<button btn btn-primary [disabled]="!allowServer">Add Server</button>
+
+<!-- Event Binding 
+    - Call a function on Click
+-->
+
+<button btn btn-secondary (click)="onCreateServer()"></button>
+
+<!-- Event Binding for Inputs, with Parameter -->
+<input type="text" (input)="onUpdateStatus($event)">
+
+<!--  -->
+
+
+
+<!-- Two Way Binding TODO-->
+
+
+
+<!-- Directives TODO -->
