@@ -12,6 +12,8 @@ export class Comp1Component implements OnInit {
 
   allowServer: boolean = false;
 
+  eventTest: Event;
+
   constructor() { 
     setTimeout(() => {
       this.allowServer = true;
@@ -23,8 +25,10 @@ export class Comp1Component implements OnInit {
     console.log("Create Server");
   }
 
-  onUpdateStatus(val) {
-    this.serverStatus = val;
+  onUpdateStatus(event: Event) {
+    // this.serverStatus = event;
+    this.eventTest = event;
+    console.log(this.eventTest);
   }
 
   ngOnInit() {
