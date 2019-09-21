@@ -9,6 +9,9 @@ export class Comp1Component implements OnInit {
 
   serverId: number = 10;
   serverStatus: string = "offline";
+  serverCreated: boolean = false;
+
+  arrayName: Array<number> = [1, 2, 3, 4];
 
   allowServer: boolean = false;
 
@@ -21,14 +24,19 @@ export class Comp1Component implements OnInit {
   }
 
   onCreateServer() {
+    this.serverCreated = true;
     this.serverStatus = "online";
     console.log("Create Server");
+  }
+
+  onCloseServer() {
+    this.serverCreated = false;
   }
 
   onUpdateStatus(event: Event) {
     // this.serverStatus = event;
     this.eventTest = event;
-    console.log(this.eventTest);
+    console.log("Event: " + this.eventTest);
   }
 
   ngOnInit() {

@@ -1,8 +1,3 @@
-<!-- Ng Model -->
-
-<input type="text" [(ngModel)]="inputName">
-<h3>{{inputName}}</h3>
-
 <!-- Data Binding
     - String Interpolation, Property Binding
     Getting Access to Variables in your ts File
@@ -25,21 +20,65 @@
 
 <button btn btn-primary [disabled]="!allowServer">Add Server</button>
 
+
 <!-- Event Binding 
     - Call a function on Click
 -->
 
-<button btn btn-secondary (click)="onCreateServer()"></button>
+<div>
+    <button btn btn-secondary (click)="onCreateServer()">Create</button>
+    <button (click)="onCloseServer()">Close</button>
+</div>
 
 <!-- Event Binding for Inputs, with Parameter -->
 <input type="text" (input)="onUpdateStatus($event)">
 
-<!--  -->
+
+<!-- Two Way Binding -->
+
+    <!-- Ng Model -->
+<p>Two Way Databinding</p>
+<input type="text" [(ngModel)]="inputName">
+<h3>{{inputName}}</h3>
 
 
+<!-- Directives, ngIf -->
 
-<!-- Two Way Binding TODO-->
+<p *ngIf="serverCreated; else noServer">
+    Hello World
+</p>
+
+<ng-template #noServer>
+    <p >
+        No Server to see here. Move on!
+    </p>
+</ng-template>
+
+<!-- ngStlye -->
+
+<p [ngStyle]="{'background-color' : 'red'}">Styling</p>
+
+<!-- ngClass TODO -->
+
+<!-- <p [ngClass]="className : conditional === true">Styling</p> -->
 
 
+<!-- ngFor TODO -->
 
-<!-- Directives TODO -->
+<p *ngFor="let i of arrayName">
+    For Loop {{i}}
+</p>
+
+<!-- ngSwitch TODO-->
+
+...
+
+
+<!-- Observables TODO -->
+
+<!-- Pipes TODO -->
+
+
+<p *ngFor="let i of arrayName">
+    For Loop {{i}}
+</p>
